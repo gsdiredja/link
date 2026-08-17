@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Tautan</title>
+  <title>Portal & Layanan</title>
   
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,14 +15,12 @@
 
   <style>
     :root {
-      --card-bg: rgba(15, 23, 42, 0.65);
+      --bg-color: #0b1120;
+      --card-bg: rgba(15, 23, 42, 0.75);
       --card-border: rgba(255, 255, 255, 0.08);
-      --card-hover-border: rgba(99, 102, 241, 0.4);
-      --card-hover-bg: rgba(30, 41, 59, 0.85);
+      --card-hover-bg: rgba(30, 41, 59, 0.9);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent: #6366f1;
-      --accent-glow: rgba(99, 102, 241, 0.25);
     }
 
     * {
@@ -33,11 +31,11 @@
     }
 
     body {
-      background-color: #0b0f19;
+      background-color: var(--bg-color);
       background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+        radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.25) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(14, 116, 144, 0.2) 0px, transparent 50%),
+        radial-gradient(at 50% 30%, rgba(99, 102, 241, 0.12) 0px, transparent 60%);
       background-attachment: fixed;
       color: var(--text-main);
       display: flex;
@@ -56,7 +54,7 @@
       position: relative;
     }
 
-    /* Profil Header */
+    /* Profile Avatar */
     .profile-wrapper {
       position: relative;
       margin-bottom: 20px;
@@ -68,8 +66,8 @@
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      border: 3px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--card-border);
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
       background: #1e293b;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -86,8 +84,8 @@
       height: 18px;
       background: #10b981;
       border-radius: 50%;
-      border: 3px solid #0b0f19;
-      box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+      border: 3px solid #0b1120;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
     }
 
     .profile-info {
@@ -96,13 +94,11 @@
     }
 
     .name {
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 800;
       letter-spacing: -0.025em;
-      margin-bottom: 6px;
-      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+      color: #ffffff;
     }
 
     .bio {
@@ -112,24 +108,24 @@
       font-weight: 400;
     }
 
-    /* Container List */
+    /* Links Container */
     .link-list {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 13px;
     }
 
-    /* Tombol Kartu Link */
+    /* Link Card */
     .link-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
-      padding: 16px 20px;
+      padding: 14px 18px;
       background: var(--card-bg);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       color: var(--text-main);
       text-decoration: none;
       border-radius: 16px;
@@ -137,59 +133,70 @@
       font-weight: 600;
       border: 1px solid var(--card-border);
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
       position: relative;
-      overflow: hidden;
-    }
-
-    .link-card::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.2s ease;
     }
 
     .link-card:hover {
       background: var(--card-hover-bg);
-      border-color: var(--card-hover-border);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 20px var(--accent-glow);
-    }
-
-    .link-card:hover::before {
-      opacity: 1;
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
     }
 
     .link-content {
       display: flex;
       align-items: center;
       gap: 14px;
-      z-index: 1;
     }
 
+    /* Base Icon Box */
     .link-icon-box {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #cbd5e1;
-      font-size: 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: all 0.2s ease;
+      font-size: 1.05rem;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
     }
 
     .link-card:hover .link-icon-box {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: transparent;
+      transform: scale(1.05);
+    }
+
+    /* Dynamic Icon Color Palettes */
+    .theme-emerald {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+    .theme-cyan {
+      background: rgba(6, 182, 212, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .theme-amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+    .theme-indigo {
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      border: 1px solid rgba(129, 140, 248, 0.3);
+    }
+    .theme-rose {
+      background: rgba(244, 63, 94, 0.15);
+      color: #fb7185;
+      border: 1px solid rgba(251, 113, 133, 0.3);
+    }
+    .theme-violet {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(192, 132, 252, 0.3);
     }
 
     .link-arrow {
@@ -200,14 +207,14 @@
 
     .link-card:hover .link-arrow {
       color: #f8fafc;
-      transform: translateX(3px);
+      transform: translate(2px, -2px);
     }
 
     /* Skeleton Loading State */
     .skeleton {
-      height: 64px;
+      height: 70px;
       border-radius: 16px;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.07) 50%, rgba(255, 255, 255, 0.03) 75%);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 25%, rgba(255, 255, 255, 0.08) 50%, rgba(255, 255, 255, 0.03) 75%);
       background-size: 200% 100%;
       animation: shimmer 1.5s infinite;
       border: 1px solid var(--card-border);
@@ -230,13 +237,16 @@
 <body>
 
   <div class="container">
-   <!-- Profil Avatar (Ganti bagian ini) -->
+    <!-- Profil Avatar -->
+    <div class="profile-wrapper">
       <img 
         class="avatar" 
         src="images/profil.png" 
         alt="Foto Profil"
-        onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Portal&background=1e293b&color=cbd5e1&size=200&bold=true';"
+        onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kodi&background=1e293b&color=38bdf8&size=200&bold=true';"
       >
+      <div class="status-badge" title="Online"></div>
+    </div>
 
     <!-- Informasi Profil -->
     <div class="profile-info">
@@ -248,10 +258,11 @@
     <div class="link-list" id="link-container">
       <div class="skeleton"></div>
       <div class="skeleton"></div>
+      <div class="skeleton"></div>
     </div>
 
     <footer class="footer">
-      &copy; 2026 Portal Link
+      &copy; 2026 kodi.web.id
     </footer>
   </div>
 
@@ -259,19 +270,37 @@
     const SHEET_ID = '1Z2GvGZ5H96jnwQHE-wuJfMsUc9xP4cwqZ7muFjqv9qI';
     const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
 
-    function getSmartIcon(title) {
+    // Konfigurasi Ikon & Skema Warna Berdasarkan Kata Kunci
+    function getLinkStyle(title) {
       const lower = title.toLowerCase();
-      if (lower.includes('skp') || lower.includes('lapordigital') || lower.includes('kinerja')) return 'fa-solid fa-file-signature';
-      if (lower.includes('ulangan') || lower.includes('evaluasi') || lower.includes('cbt') || lower.includes('quiz')) return 'fa-solid fa-pen-to-square';
-      if (lower.includes('jurnal') || lower.includes('presensi') || lower.includes('guru')) return 'fa-solid fa-chalkboard-user';
-      if (lower.includes('siswa') || lower.includes('modul') || lower.includes('belajar')) return 'fa-solid fa-graduation-cap';
-      if (lower.includes('blog') || lower.includes('nulis') || lower.includes('catatan')) return 'fa-solid fa-feather-pointed';
-      if (lower.includes('jurnal') || lower.includes('catatan') || lower.includes('lapak')) return 'fa-solid fa-book-open';
-      if (lower.includes('ulangan') || lower.includes('quiz') || lower.includes('ujian') || lower.includes('tes')) return 'fa-solid fa-graduation-cap';
-      if (lower.includes('materi') || lower.includes('modul')) return 'fa-solid fa-folder-open';
-      if (lower.includes('absen') || lower.includes('kehadiran')) return 'fa-solid fa-user-check';
-      if (lower.includes('wa') || lower.includes('whatsapp') || lower.includes('kontak')) return 'fa-brands fa-whatsapp';
-      return 'fa-solid fa-link';
+      
+      // 1. LaporDigital / SKP
+      if (lower.includes('skp') || lower.includes('lapordigital') || lower.includes('lapor')) {
+        return { icon: 'fa-solid fa-file-signature', theme: 'theme-emerald' };
+      }
+      // 2. CBT / Ulangan
+      if (lower.includes('cbt') || lower.includes('ulangan') || lower.includes('quiz') || lower.includes('ujian')) {
+        return { icon: 'fa-solid fa-pen-to-square', theme: 'theme-cyan' };
+      }
+      // 3. Guru / Jurnal / Nilai / Presensi
+      if (lower.includes('guru') || lower.includes('jurnal') || lower.includes('presensi') || lower.includes('nilai')) {
+        return { icon: 'fa-solid fa-chalkboard-user', theme: 'theme-amber' };
+      }
+      // 4. Siswa / Modul / Belajar
+      if (lower.includes('siswa') || lower.includes('modul') || lower.includes('belajar')) {
+        return { icon: 'fa-solid fa-graduation-cap', theme: 'theme-indigo' };
+      }
+      // 5. Blog / Asal Nulis
+      if (lower.includes('blog') || lower.includes('nulis') || lower.includes('catatan') || lower.includes('opini')) {
+        return { icon: 'fa-solid fa-feather-pointed', theme: 'theme-rose' };
+      }
+      // 6. About Me / Profil
+      if (lower.includes('about') || lower.includes('tentang') || lower.includes('me')) {
+        return { icon: 'fa-solid fa-user-circle', theme: 'theme-violet' };
+      }
+      
+      // Default
+      return { icon: 'fa-solid fa-link', theme: 'theme-cyan' };
     }
 
     async function fetchLinks() {
@@ -294,14 +323,14 @@
           if (title && rawUrl && isActive) {
             let url = rawUrl.trim();
             
-            // Otomatis memperbaiki URL jika kurang satu slash
+            // Auto fix URL format
             if (url.startsWith('https:/') && !url.startsWith('https://')) {
               url = url.replace('https:/', 'https://');
             } else if (url.startsWith('http:/') && !url.startsWith('http://')) {
               url = url.replace('http:/', 'http://');
             }
 
-            const iconClass = getSmartIcon(title);
+            const { icon, theme } = getLinkStyle(title);
 
             const card = document.createElement('a');
             card.className = 'link-card';
@@ -311,8 +340,8 @@
             
             card.innerHTML = `
               <div class="link-content">
-                <div class="link-icon-box">
-                  <i class="${iconClass}"></i>
+                <div class="link-icon-box ${theme}">
+                  <i class="${icon}"></i>
                 </div>
                 <span>${title.trim()}</span>
               </div>
@@ -325,11 +354,11 @@
         }
 
         if (count === 0) {
-          container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">Belum ada link aktif saat ini.</p>';
+          container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.9rem;">Belum ada link aktif.</p>';
         }
 
       } catch (err) {
-        container.innerHTML = '<p style="color: #f87171; font-size: 0.9rem;">Gagal memuat link. Pastikan izin akses Google Sheet sudah disetel ke publik.</p>';
+        container.innerHTML = '<p style="color: #f87171; font-size: 0.9rem;">Gagal memuat link. Periksa koneksi atau izin Google Sheet.</p>';
       }
     }
 
