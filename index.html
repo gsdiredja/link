@@ -261,6 +261,11 @@
 
     function getSmartIcon(title) {
       const lower = title.toLowerCase();
+      if (lower.includes('skp') || lower.includes('lapordigital') || lower.includes('kinerja')) return 'fa-solid fa-file-signature';
+      if (lower.includes('ulangan') || lower.includes('evaluasi') || lower.includes('cbt') || lower.includes('quiz')) return 'fa-solid fa-pen-to-square';
+      if (lower.includes('jurnal') || lower.includes('presensi') || lower.includes('guru')) return 'fa-solid fa-chalkboard-user';
+      if (lower.includes('siswa') || lower.includes('modul') || lower.includes('belajar')) return 'fa-solid fa-graduation-cap';
+      if (lower.includes('blog') || lower.includes('nulis') || lower.includes('catatan')) return 'fa-solid fa-feather-pointed';
       if (lower.includes('jurnal') || lower.includes('catatan') || lower.includes('lapak')) return 'fa-solid fa-book-open';
       if (lower.includes('ulangan') || lower.includes('quiz') || lower.includes('ujian') || lower.includes('tes')) return 'fa-solid fa-graduation-cap';
       if (lower.includes('materi') || lower.includes('modul')) return 'fa-solid fa-folder-open';
